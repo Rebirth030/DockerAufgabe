@@ -1,0 +1,16 @@
+
+services:
+    mrksdh:
+        image: mrksdh/assessment
+        container_name: mrksdh
+        ports:
+            - "8080:8080"
+
+
+    image:
+        image: some-api-image
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+            - mrksdh
